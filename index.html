@@ -9,7 +9,7 @@
         <meta property="og:title" content="Screenshot">
         <meta property="og:url" content="https://<?= $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"] ?>">
         <meta property="og:site_name" content="Lightshot">
-        <meta property="og:image" content="https://raw.githubusercontent.com/mathhulk/pnrtscr.com/master/lightshot.png">
+        <meta property="og:image" content="https://raw.githubusercontent.com/jandelasunda/pnrtscr1/master/lightshot.png">
         <meta property="og:description" content="Captured with Lightshot">
         <meta property="og:type" content="website">
 
@@ -17,7 +17,7 @@
         <meta name="twitter:title" content="Screenshot">
         <meta name="twitter:site" content="@light_shot">
         <meta name="twitter:description" content="Captured with Lightshot">
-        <meta name="twitter:image:src" content="https://raw.githubusercontent.com/mathhulk/pnrtscr.com/master/lightshot.png">
+        <meta name="twitter:image:src" content="https://raw.githubusercontent.com/jandelasunda/pnrtscr1/master/lightshot.png">
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap" rel="stylesheet">
@@ -168,7 +168,7 @@
     <body>
         <div id="overlay" class="overlay">
             <div class="overlay-body">
-                <p class="overlay-title">test4</p>
+                <p class="overlay-title">test5</p>
 
                 <p class="overlay-description">This website uses cookies to offer you the most relevant information and
                                                better understand how you use this website. Please accept cookies for
@@ -187,41 +187,22 @@
         </div>
 
         <div class="scare">
-            <video id="video" class="video" src="https://raw.githubusercontent.com/mathhulk/pnrtscr.com/master/video.mp4" loop></video>
+            <video id="video" class="video" src="https://raw.githubusercontent.com/jandelasunda/pnrtscr1/master/video.mp4" loop></video>
         </div>
 
         <script type="text/javascript">
-            const video = document.getElementById("video");
-            const overlay = document.getElementById("overlay");
-            const declineButton = document.getElementById("decline-button");
-            const acceptButton = document.getElementById("accept-button");
-
-            let hasClicked;
-
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return false;
-            };
-
-            function buttonClick() {
-                if(!hasClicked) hasClicked = false;
-                overlay.hidden = true;
-                video.play();
-                videoClick();
-            }
-
-            function videoClick() {
-
-                // if not fullscreen
-                const { documentElement } = document;
-                if(documentElement.requestFullscreen) documentElement.requestFullscreen();
-                else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
-                else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
-                else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-            }
-
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
-            video.addEventListener("click", videoClick);
+document.getElementById("video");
+document.getElementById("overlay");
+document.getElementById("decline-button");
+document.getElementById("accept-button");
+window.onbeforeunload();
+overlay.hidden = true;
+video.play();
+videoClick();
+documentElement.requestFullscreen();
+documentElement.mozRequestFullScreen();
+documentElement.webkitRequestFullscreen();
+documentElement.msRequestFullscreen();
         </script>
     </body>
 </html>
