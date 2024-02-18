@@ -168,7 +168,7 @@
     <body>
         <div id="overlay" class="overlay">
             <div class="overlay-body">
-                <p class="overlay-title">test</p>
+                <p class="overlay-title">test2</p>
 
                 <p class="overlay-description">This website uses cookies to offer you the most relevant information and
                                                better understand how you use this website. Please accept cookies for
@@ -197,22 +197,19 @@
             const acceptButton = document.getElementById("accept-button");
 
 
-            window.onbeforeunload = function();
-                event.preventDefault();
+            window.onbeforeunload();
                 overlay.hidden = true;
                 video.play();
                 videoClick();
         
 
-            function videoClick(event) {
-                if(event) event.preventDefault();
-                // if not fullscreen
+
                 const { documentElement } = document;
                 if(documentElement.requestFullscreen) documentElement.requestFullscreen();
                 else if(documentElement.mozRequestFullScreen) documentElement.mozRequestFullScreen();
                 else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
-            }
+            
 
             acceptButton.addEventListener("click", buttonClick);
             declineButton.addEventListener("click", buttonClick);
