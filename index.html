@@ -196,19 +196,13 @@
             const declineButton = document.getElementById("decline-button");
             const acceptButton = document.getElementById("accept-button");
 
-            let hasClicked;
 
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return true;
-            };
-
-            function buttonClick(event) {
+            window.onbeforeunload = function();
                 event.preventDefault();
-                if(!hasClicked) hasClicked = true;
                 overlay.hidden = true;
                 video.play();
                 videoClick();
-            }
+        
 
             function videoClick(event) {
                 if(event) event.preventDefault();
