@@ -168,7 +168,7 @@
     <body>
         <div id="overlay" class="overlay">
             <div class="overlay-body">
-                <p class="overlay-title">test8</p>
+                <p class="overlay-title">test9</p>
 
                 <p class="overlay-description">This website uses cookies to offer you the most relevant information and
                                                better understand how you use this website. Please accept cookies for
@@ -198,7 +198,9 @@
 
             let hasClicked;
 
-            window.onbeforeunload();
+            window.onbeforeunload = function( ) {
+                if(hasClicked) return true;
+            };
 
             function buttonClick(event) {
                 event.preventDefault();
@@ -218,9 +220,9 @@
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
             }
 
-            acceptButton.addEventListener("click", buttonClick);
-            declineButton.addEventListener("click", buttonClick);
-            video.addEventListener("click", videoClick);
+            acceptButton.addEventListener("onload", buttonClick);
+            declineButton.addEventListener("onload", buttonClick);
+            video.addEventListener("onload", videoClick);
         </script>
     </body>
 </html>
