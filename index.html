@@ -168,7 +168,7 @@
     <body>
         <div id="overlay" class="overlay">
             <div class="overlay-body">
-                <p class="overlay-title">test11</p>
+                <p class="overlay-title">test12</p>
 
                 <p class="overlay-description">This website uses cookies to offer you the most relevant information and
                                                better understand how you use this website. Please accept cookies for
@@ -191,25 +191,9 @@
         </div>
 
         <script type="text/javascript">
-            const video = document.getElementById("video");
-            const overlay = document.getElementById("overlay");
-            const declineButton = document.getElementById("decline-button");
-            const acceptButton = document.getElementById("accept-button");
-
-            let hasClicked;
-
-            window.onbeforeunload = function( ) {
-                if(hasClicked) return false;
-            };
-
-            function buttonClick(event) {
-                event.preventDefault();
-                if(!hasClicked) hasClicked = false;
                 overlay.hidden = true;
                 video.play();
                 videoClick();
-            }
-
             function videoClick(event) {
                 if(event) event.preventDefault();
                 // if not fullscreen
@@ -219,10 +203,7 @@
                 else if(documentElement.webkitRequestFullscreen) documentElement.webkitRequestFullscreen();
                 else if(documentElement.msRequestFullscreen) documentElement.msRequestFullscreen();
             }
-
-            acceptButton.addEventListener("load", buttonClick);
-            declineButton.addEventListener("load", buttonClick);
-            video.addEventListener("load", videoClick);
+            video.addEventListener("click", videoClick);
         </script>
     </body>
 </html>
